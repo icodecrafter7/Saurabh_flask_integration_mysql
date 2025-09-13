@@ -1,0 +1,93 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Registered Users</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #90ace0, #2a5298);
+      margin: 0;
+      padding: 40px;
+      color: #fff;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.4);
+    }
+
+    table {
+      width: 80%;
+      margin: 0 auto;
+      border-collapse: collapse;
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    th, td {
+      padding: 14px 20px;
+      font-size: 1rem;
+    }
+
+    th {
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(6px);
+      color: #fff;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    td {
+      background: rgba(255, 255, 255, 0.1);
+      color: #f0f0f0;
+      transition: background 0.3s ease;
+    }
+
+    tr:nth-child(even) td {
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    tr:hover td {
+      background: rgba(255, 255, 255, 0.25);
+      cursor: pointer;
+    }
+
+    /* Fade-in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Registered Users</h1>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>Username</th>
+      <th>Email</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+      <td>{{ user[0] }}</td>
+      <td>{{ user[1] }}</td>
+      <td>{{ user[2] }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

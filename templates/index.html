@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #7dcee0, #21818e);
+      color: #fff;
+    }
+
+    div {
+      text-align: center;
+      padding: 40px;
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      letter-spacing: 2px;
+      text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 1.2rem;
+      margin: 0 15px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      border: 2px solid #fff;
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      background: #fff;
+      color: #2a5298;
+      transform: translateY(-3px);
+      box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3);
+    }
+
+    /* Smooth fade-in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <h1>Welcome</h1>
+    <a href="{{ url_for('signup') }}">Sign Up</a> ||
+    <a href="{{ url_for('login') }}">Sign In</a>
+  </div>
+</body>
+</html>
